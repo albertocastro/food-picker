@@ -1,3 +1,4 @@
+const { expect } = require("@jest/globals")
 const getRestaurant = require("./index")
 
 describe("Get Restaurant",()=>{
@@ -32,20 +33,19 @@ describe("Get Restaurant",()=>{
     })
     it("should never repeat",()=>{
         
-        let hashmap = {}
-         restaurants.map((restaurant,i)=>{
-            const result =  getRestaurant(restaurants)
-            if(!hashmap[result]){
-                expect(hashmap[result]).toBe(undefined)
-                hashmap[result] = true
-            }else{
-                
-                throw new Error(result+i+" repeated");
-            }
-            
-        })
-    
+        let visitedRestaurants = []
+        for(let i=0;i<restaurants.length;i++){
 
+            const restaurant = getRestaurant(restaurants,visitedRestaurants)
+            expect(visitedRestaurants).not.toContain(restaurant)
+
+            visitedRestaurants.push(restaurant)
+        }
+    })
+    it("should show a message when no restaurant is available",()=>{
+        
+        expect(getRestaurant(restaurants,restaurants)).toBe("No restaurants available")
+    
     })
 
 })

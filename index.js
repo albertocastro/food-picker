@@ -1,6 +1,4 @@
-function getRestaurant(restaurants){
-    // You code here buddy
-    
+function getRestaurant(restaurants,previouslyVisited){
 }
 
 module.exports = getRestaurant
