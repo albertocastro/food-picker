@@ -1,0 +1,14 @@
+{
+  "name": "food-picker",
+  "version": "1.0.0",
+  "description": "Create a function that returns a restaurant to eat from randomly.  - It should give a different restaurant every time - Not repeat until all restaurants have been previously given",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.2.0"
+  }
+}
