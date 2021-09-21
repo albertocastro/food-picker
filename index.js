@@ -1,17 +1,17 @@
 function getRestaurant(restaurants,previouslyVisited){
     //VALIDATION       
-    if(previouslyVisited === undefined){
-        previouslyVisited = []
-    }
-    if(!Array.isArray(restaurants)){
-        return false
-    }
-    if(!Array.isArray(previouslyVisited)){
-        return false
-    }
-   if(restaurants.length === 0){
-       return false
-   }
+        if(previouslyVisited === undefined){
+        previouslyVisited = [];
+     }
+         if(!Array.isArray(restaurants)){
+             return false
+     }
+        if(!Array.isArray(previouslyVisited)){
+             return false
+     }
+        if(restaurants.length === 0){
+            return false
+     }
 
     //-------------------------------------
 
@@ -23,46 +23,12 @@ function getRestaurant(restaurants,previouslyVisited){
     
      if(filteredRestaurants.length === 0 ){
          return "No restaurants available"
-     }
+     };
      
-     const random = Math.floor(Math.random()* filteredRestaurants.length);
+    const random = Math.floor(Math.random()* filteredRestaurants.length);
     
-    return filteredRestaurants[random]
-    //---------------------------------
+        return filteredRestaurants[random]
+  
         
    
-}
-// --------------------------------
-const listOfRestaurants = [
-    "chick-fil-a",
-    "five guys",
-    "panera bread",
-    "chipotle",
-    "tacos tijuana",
-]
-console.log(getRestaurant(listOfRestaurants,[
-
-    "tacos tijuana",
-    "five guys",
-    "tacos tijuana",
-    "chipotle",
-    "chick-fil-a",
-    "panera bread",
-
-]))
-
-console.log(getRestaurant({},[
-
-    "tacos tijuana",
-    "five guys",
-    "tacos tijuana",
-    "chipotle",
-    "chick-fil-a",
-    "panera bread",
-
-]))
-
-console.log(getRestaurant(5,5))
-
-module.exports = getRestaurant
-
+};
